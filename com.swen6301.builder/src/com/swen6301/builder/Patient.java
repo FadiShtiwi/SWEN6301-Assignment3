@@ -77,53 +77,53 @@ public class Patient {
 		{
 			super();
 		}
-		 public PatientBuilder setFirstName(String firstName) {
-	            this.firstName = firstName;
+		 public PatientBuilder setFirstName() {
+	            this.firstName = RandomUtils.randomIdentifier();
 	            return this;
 	        }
-		 public PatientBuilder setMiddleName(String middleName) {
-	            this.middleName = middleName;
+		 public PatientBuilder setMiddleName() {
+	            this.middleName = RandomUtils.randomIdentifier();
 	            return this;
 	        }
-		 public PatientBuilder setLastName(String lastName) {
-	            this.lastName = lastName;
+		 public PatientBuilder setLastName() {
+	            this.lastName = RandomUtils.randomIdentifier();
 	            return this;
 	        }
-		 public PatientBuilder setAge(int age) {
-	            this.age = age;
+		 public PatientBuilder setAge() {
+	            this.age = RandomUtils.randomNumber(150);
 	            return this;
 	        }
-		 public PatientBuilder setWeight(int weight) {
-	            this.weight = weight;
+		 public PatientBuilder setWeight() {
+	            this.weight = RandomUtils.randomNumber(400);
 	            return this;
 	        }
-		 public PatientBuilder setHeight(int height) {
-	            this.height = height;
+		 public PatientBuilder setHeight() {
+	            this.height = RandomUtils.randomNumber(300);
 	            return this;
 	        }
-		 public PatientBuilder setGender(Gender gender) {
-	            this.gender = gender;
+		 public PatientBuilder setGender() {
+	            this.gender = RandomUtils.randomGenderString();
 	            return this;
 	        }
-		 public PatientBuilder setBloodType(BloodType bloodtype) {
-	            this.bloodType = bloodtype;
+		 public PatientBuilder setBloodType() {
+	            this.bloodType = RandomUtils.randomBloodType();
 	            return this;
 	        }
-		 public PatientBuilder setOrganDoner(boolean organDoner) {
-	            this.organDonor = organDoner;
+		 public PatientBuilder setOrganDoner() {
+	            this.organDonor = RandomUtils.randomBoolean();
 	            return this;
 	        }
 		 
 		   public Patient build() {
-			   this.setFirstName(RandomUtils.randomIdentifier());
-			   this.setMiddleName(RandomUtils.randomIdentifier());
-			   this.setLastName(RandomUtils.randomIdentifier());
-			   this.setAge(RandomUtils.randomNumber(150));
-			   this.setWeight(RandomUtils.randomNumber(400));
-			   this.setGender(RandomUtils.randomGenderString());
-			   this.setHeight(RandomUtils.randomNumber(300));
-			   this.setOrganDoner(RandomUtils.randomBoolean());
-			   this.setBloodType(RandomUtils.randomBloodType());
+			   //this.setFirstName();
+			   //this.setMiddleName();
+			   //this.setLastName();
+			   //this.setAge();
+			   //this.setWeight();
+			   //this.setGender();
+			   //this.setHeight();
+			   //this.setOrganDoner();
+			   //this.setBloodType();
 			   
 			   Patient patient =  new Patient(this);
 			   validatePatient(patient);

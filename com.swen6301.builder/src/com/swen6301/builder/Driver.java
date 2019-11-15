@@ -25,7 +25,17 @@ public class Driver {
 	 */
 	public static void createRandomPatient() {
 		
-		Patient patient=new Patient.PatientBuilder().build();
+		Patient patient=new Patient.PatientBuilder()
+				.setFirstName()
+				.setMiddleName()
+				.setLastName()
+				.setAge()
+				.setHeight()
+				.setWeight()
+				.setGender()
+				.setBloodType()
+				.setOrganDoner()
+				.build();
 	}
 	
 }
