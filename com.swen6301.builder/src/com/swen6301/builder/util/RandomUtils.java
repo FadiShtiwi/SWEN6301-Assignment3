@@ -64,9 +64,11 @@ public class RandomUtils {
 	 * 
 	 * @return a random blood type {@link String}.
 	 */
-	public static String randomBloodType() {
-		String[] bloodTypes = {null, "none", "a+", "a-", "o+", "o-", "b+", "b-", "ab+", "ab-"};
-		return bloodTypes[RANDOM.nextInt(bloodTypes.length)];
+	public static BloodType randomBloodType() {
+		int length=BloodType.values().length;
+		int index=RANDOM.nextInt(length);
+		return BloodType.values()[index];
+		
 	}
 	
 	/**
@@ -74,9 +76,11 @@ public class RandomUtils {
 	 * 
 	 * @return a random sex type {@link String}.
 	 */
-	public static String randomSexString() {
-		String[] possibleSexValues = {null, "none", "male", "female"};
-		return possibleSexValues[RANDOM.nextInt(possibleSexValues.length)];
+	public static Gender randomGenderString() {
+		int length=Gender.values().length;
+		int index=RANDOM.nextInt(length);
+		return Gender.values()[index];
+		
 	}
 	
 }

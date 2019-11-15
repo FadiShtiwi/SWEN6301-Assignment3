@@ -26,7 +26,7 @@ public final class ValidationUtils {
 	 * @param bloodType Corresponds to the blood type of the patient. It must be 'none', 'a+', 'a-', 'o+', 'o-', 'b+', 'b-', 'ab+', 'ab-'.
 	 * @return true, if the patient info confirms to the requirement set forth, otherwise an {@link IllegalArgumentException} will be thrown.
 	 */
-	public static boolean checkPatientInfo(String firstName, String middleName, String lastName, int age, int weight, String sex, int height, boolean organDonor, String bloodType) {
+	public static boolean checkPatientInfo(String firstName, String middleName, String lastName, int age, int weight, Gender sex, int height, boolean organDonor, BloodType bloodType) {
 		
 		// Check whether the firstName is not null and not empty.
 		if(firstName == null || firstName.isEmpty()) {
@@ -59,14 +59,14 @@ public final class ValidationUtils {
 		}
 		
 		// Check whether sex is not null and not empty.
-		if(sex == null || sex.isEmpty()) {
+		if(sex == null ) {
 			throw new IllegalArgumentException("Sex can only be either 'male', 'female', or 'none'.");
 		}
 		
 		// Check whether the sex is equal to either 'male, 'female', or 'none'.
-		if(!"male".equals(sex.toLowerCase()) && !"female".equals(sex.toLowerCase()) && !"none".equals(sex.toLowerCase())) {
-			throw new IllegalArgumentException("Sex can only be either 'male', 'female', or 'none'.");
-		}
+		//if(!"male".equals(sex.toLowerCase()) && !"female".equals(sex.toLowerCase()) && !"none".equals(sex.toLowerCase())) {
+		//	throw new IllegalArgumentException("Sex can only be either 'male', 'female', or 'none'.");
+		//}
 		
 		// Check whether bloodType is not null.
 		if(bloodType == null) {
@@ -74,16 +74,7 @@ public final class ValidationUtils {
 		}
 		
 		// Check whether bloodType is either A+, A-, B+, B-, O+, O-, AB+, AB-, or 'none'.
-		if("a+".equals(bloodType.toLowerCase()) &&
-				"a-".equals(bloodType.toLowerCase()) &&
-				"b+".equals(bloodType.toLowerCase()) &&
-				"b-".equals(bloodType.toLowerCase()) &&
-				"ab+".equals(bloodType.toLowerCase()) && 
-				"ab-".equals(bloodType.toLowerCase()) &&
-				"o+".equals(bloodType.toLowerCase()) &&
-				"o-".equals(bloodType.toLowerCase())) {
-			throw new IllegalArgumentException("Blood type can be either A+, A-, B+, B-, O+, O-, AB+, AB-, or 'none' in case the patient does not her blood type.");
-		}
+	
 		
 		// patient's information is correct, therefore return "true".
 		return true;

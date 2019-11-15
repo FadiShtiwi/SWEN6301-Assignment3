@@ -26,7 +26,7 @@ public final class PersistenceUtils {
 	 * @param bloodType Corresponds to the blood type of the patient. It must be 'none', 'a+', 'a-', 'o+', 'o-', 'b+', 'b-', 'ab+', 'ab-'.
 	 * @return true, if the patient info confirms to the requirement set forth, otherwise an {@link IllegalArgumentException} will be thrown.
 	 */
-	public static boolean storePatientInfo(String firstName, String middleName, String lastName, int age, int weight, String sex, int height, boolean organDonor, String bloodType) {
+	public static boolean storePatientInfo(String firstName, String middleName, String lastName, int age, int weight, Gender sex, int height, boolean organDonor, BloodType bloodType) {
 		try {
 			ValidationUtils.checkPatientInfo(firstName, middleName, lastName, age, weight, sex, height, organDonor, bloodType);
 		} catch (IllegalArgumentException e) {
